@@ -1,0 +1,59 @@
+/* Wrapper to align boxes horizontally */
+.otp-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Individual OTP Box */
+.otp-input {
+  width: 48px;
+  height: 56px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  caret-color: #3b82f6; /* Custom cursor color */
+}
+
+/* Hover state */
+.otp-input:hover {
+  border-color: #9ca3af;
+}
+
+/* Active / Focus state */
+.otp-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Optional: Style when a box already has a character entered */
+.otp-input:not(:placeholder-shown) {
+  border-color: #6b7280;
+  background-color: #f9fafb;
+}
+
+/* Optional: Error state (add .error class via JS) */
+.otp-input.error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+/* Responsive adjustment for smaller mobile screens */
+@media (max-width: 400px) {
+  .otp-container {
+    gap: 6px;
+  }
+  .otp-input {
+    width: 40px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+}
